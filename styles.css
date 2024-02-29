@@ -20,13 +20,18 @@
     z-index: 1;
   }
 
+  body{
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .logo{
-    margin-left: 20px;
+    margin-left: 350px;
     margin-top: 5px;
   }
   
   #nav-bar{
-    margin-right: 20px;
+    margin-right: 400px;
   }
   
   .nav-container > ul{
@@ -54,14 +59,17 @@
 
   .hero-wrap{
     text-align: center;
+    width: 100%;
     height: 80vh;
-    overflow: hidden;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: top;
   }
+
 
   .hero-bg{
     width: 100%;
-    height: auto;
+    height: 80%;
     position: absolute;
     top: 0;
     left: 0;
@@ -73,21 +81,58 @@
     position: relative;
     color: white;
     z-index: 0;
-  }
-
-  .hero-content > p{
-    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
   }
 
   .hero-title{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
   }
 
   .hero-text{
-    font-size: 42px;
+    font-size: 58px;
     font-weight: 700;
-    width: auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 0;
+    color: #00ffaa
+  }
+
+  .hero-content > input{
+    margin-top: 100px;
+  }
+
+  .section-wrap{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .section-header{
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    width: 75%;
+  }
+
+  .section-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 20px;
+  }
+
+  .card{
+    border: 1px solid black;
+    width: 350px;
+    height: 400px;
+    padding: 20px;
+    word-wrap: break-word;
   }
 
   #form > input{
@@ -95,25 +140,34 @@
   }
 
   #email{
-    width: 400px;
+    width: 300px;
     height: 40px;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
     border-radius: 5px;
   }
 
   #submit{
     width: 25%;
-    height: 32px;
+    height: 58px;
     font-size: 18px;
-    background-color: rgb(1, 172, 172);
+    background-color: rgb(207, 0, 0);
     color: rgb(255, 255, 255);
     font-weight: 700;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #submit:hover{
+    background-color: rgb(165, 1, 1);
   }
 
   #video{
+    visibility: hidden;
+  }
+
+  #contact-us{
     visibility: hidden;
   }
   
