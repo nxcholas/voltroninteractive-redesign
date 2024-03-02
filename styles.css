@@ -123,6 +123,7 @@
   .section-content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 60%;
     gap: 20px;
   }
