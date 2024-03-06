@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
 
 *{
+    --card-border-clr1: rgba(0, 255, 255, 0.226);
+    --card-border-clr2: rgba(117, 108, 245, 0.11);
+    --card-border-clr3: rgba(255, 0, 255, 0.089);
+
     box-sizing: border-box;
     font-family: 'Poppins';
   }
@@ -122,20 +131,56 @@
   }
 
   .section-content{
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 60%;
-    gap: 20px;
+    gap: 30px;
   }
-
+/*------------Custom Border Animation------------*/
   .card{
-    border: 1px solid black;
+    border-radius: 20px;
     width: 350px;
     height: 400px;
     padding: 20px;
     word-wrap: break-word;
+    background: white;
+    position: relative;
   }
+
+  .card::before,
+  .card::after{
+    content: "";
+    position: absolute;
+    inset: -.3rem;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--card-border-clr1),
+      var(--card-border-clr2),
+      var(--card-border-clr3),
+      var(--card-border-clr2),
+      var(--card-border-clr1)
+    );
+    animation: rotation 20s linear infinite;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  @keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+
+    100% {
+        --gradient-angle: 360deg;
+    }
+  }
+
+  .card::after{
+    filter: blur(3.5rem);
+  }
+/*-------------------------------------------------*/
 
   #form > input{
     margin-bottom: 15px;
